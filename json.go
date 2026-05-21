@@ -28,8 +28,8 @@ type jsonCodec struct {
 	pending map[uint64]*json.RawMessage
 }
 
-// NewServerCodec returns a new ServerCodec using JSON-RPC on conn.
-func NewServerCodec(conn io.ReadWriteCloser) ServerCodec {
+// NewJsonCodec returns a new ServerCodec using JSON-RPC on conn.
+func NewJsonCodec(conn io.ReadWriteCloser) ServerCodec {
 	return &jsonCodec{
 		dec:     json.NewDecoder(conn),
 		enc:     json.NewEncoder(conn),
